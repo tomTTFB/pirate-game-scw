@@ -2,7 +2,7 @@
 
 A text-based pirate RPG built in Python — sail the seas, loot enemies, and hunt down the Kraken.
 
-> 🏆 Built in **3 hours 20 minutes** for [Skills Competition Wales](https://www.skillscompetitionswales.co.uk/) — awarded **Highly Commended**
+> 🏆 Built in **3 hours 20 minutes** for [Skills Competition Wales](https://inspiringskills.gov.wales/results/skills-competition-wales-202526) — awarded **Highly Commended**
 
 ---
 
@@ -19,7 +19,7 @@ Every run starts fresh with a custom stat build — how you distribute your poin
 **Requirements:** Python 3.x — no external libraries needed.
 
 ```bash
-git clone https://github.com/yourusername/pirate-rpg
+git clone https://github.com/tomTTFB/pirate-rpg
 cd pirate-rpg
 python main.py
 ```
@@ -75,4 +75,4 @@ Defeat enemies until you find the **Kraken Map** (rare drop), then challenge the
 
 ---
 
-*Made for Skills Competition Wales — IT Software Solutions category*
+*Made for Skills Competition Wales — Coding category*
