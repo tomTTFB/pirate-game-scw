@@ -6,7 +6,7 @@ import time
 
 def calc_damage(attacker, enemy):
     multiplier = random.uniform(0.75, 1.25)
-    damage = attacker.attack - (enemy.defense / 2) * multiplier
+    damage = (attacker.attack - (enemy.defense / 2)) * multiplier
     damage = max(0, damage)
     return int(round(damage))
 
@@ -76,12 +76,12 @@ def battle(player, enemy):
                     print(f"You both moved at the same time, but you shot first!")
                     print("\n")
                     damage = calc_damage(player, enemy)
-                    player.take_damage(damage)
-                    print(f"you lost {damage} health!")
-                    time.sleep(1)
-                    damage = calc_damage(enemy, player)
                     enemy.take_damage(damage)
                     print(f"{enemy.name} lost {damage} health!")
+                    time.sleep(1)
+                    damage = calc_damage(enemy, player)
+                    player.take_damage(damage)
+                    print(f"you lost {damage} health!")
                     input("Press ENTER to continue...")
 
         if enemy.health <= (enemy.max_hp * 0.2) and exposedMessage != 1:
@@ -99,7 +99,8 @@ def battle(player, enemy):
         elif enemy.health <= 0:
             clearScreen()
             earnedgold = enemy.gold * random.uniform(0.5,1)
-            earnedgold = int(round(damage))
+            earnedgold = int(round(earnedgold))
+            player.gold += earnedgold
             print(f"You defeated {enemy.name} and stole {earnedgold} gold!")
 
             levelupChance = random.randint(5,11)
@@ -111,13 +112,13 @@ def battle(player, enemy):
                 time.sleep(3)
             if levelupChance >= 8 and levelupChance <= 9:
                 defenseGained = random.randint(1,3)
-                player.defense = player.defensek + defenseGained
+                player.defense = player.defense + defenseGained
                 print(f"You gained +{defenseGained} defense from the battle")
                 time.sleep(3)
             if levelupChance >= 10 and levelupChance <= 11:
                 speedGained = random.randint(2,4)
                 player.speed = player.speed + speedGained
-                print(f"You gained +{speedGained} attack from the battle")
+                print(f"You gained +{speedGained} speed from the battle")
                 time.sleep(3)
             
             if player.krakenmap == 0:
