@@ -1,5 +1,5 @@
 class Character:
-    def __init__(self, name, max_hp, health, attack, defense, speed, current_location, gold, ug, rp, rum, srk, krakenmap):
+    def __init__(self, name, max_hp, health, attack, defense, speed, current_location, gold, ug=0, rp=0, rum=0, srk=0, krakenmap=0):
         # Initialize instance variables
         self.name = name
         self.health = health
